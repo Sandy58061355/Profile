@@ -1,0 +1,167 @@
+.work-intro {
+  height: 240px;
+  padding-top: 68px;
+}
+
+.work-intro h1 {
+  margin: 0 0 18px;
+  font-size: 52px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.work-intro p {
+  width: 800px;
+  max-width: 100%;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.selected-work {
+  padding: 52px 0 96px;
+  border-top: 1px solid var(--line);
+}
+
+.selected-work-heading {
+  height: 48px;
+  margin-bottom: 34px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.selected-work-heading h2 {
+  font-size: 30px;
+  line-height: 1.45;
+}
+
+.selected-work-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.work-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 610px));
+  column-gap: 28px;
+  row-gap: 34px;
+}
+
+.work-overview-card {
+  min-width: 0;
+}
+
+.work-overview-media {
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: var(--soft);
+  transition: transform 200ms ease-out;
+}
+
+.work-overview-media:hover {
+  transform: translateY(-3px);
+}
+
+.work-kicker,
+.work-meta,
+.work-description {
+  color: var(--muted);
+}
+
+.work-kicker {
+  margin: 0 0 14px;
+  font-size: 11px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.work-overview-card h3 {
+  margin: 0 0 14px;
+  font-size: 24px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.work-description {
+  width: 590px;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.work-overview-card:first-child .work-description {
+  min-height: 62px;
+}
+
+.work-meta {
+  min-height: 24px;
+  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.work-case-link {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.work-case-link:hover {
+  color: var(--text);
+}
+
+.work-contact-cta {
+  padding: 120px 0;
+}
+
+@media (max-width: 900px) {
+  .work-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-work-heading {
+    height: auto;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .work-intro {
+    height: auto;
+    padding: 64px 0 72px;
+  }
+
+  .work-intro h1 {
+    font-size: 44px;
+  }
+
+  .work-intro p {
+    font-size: 17px;
+  }
+
+  .selected-work {
+    padding: 48px 0 72px;
+  }
+
+  .selected-work-heading {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .work-overview-grid {
+    row-gap: 56px;
+  }
+
+  .work-overview-media {
+    height: 240px;
+  }
+}
