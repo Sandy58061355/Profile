@@ -36,6 +36,7 @@ button { font:inherit; }
 .button-secondary:hover { transform:translateY(-2px); border-color:#aaa398; }
 
 .work-section { padding:96px 0 128px; }
+.work-section.section-divider { border-top:0; }
 .section-heading-row { height:56px; display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:48px; }
 h2 { margin:0; font-size:40px; line-height:1.4; letter-spacing:0; font-weight:600; }
 .text-link { color:var(--muted); font-size:14px; line-height:1.4; }
