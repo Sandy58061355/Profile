@@ -6,3 +6,14 @@ if (languageButton) {
     languageButton.classList.toggle('is-open');
   });
 }
+
+const siteHeader = document.querySelector('.site-header');
+
+if (siteHeader) {
+  const updateHeaderState = () => {
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 16);
+  };
+
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+}
