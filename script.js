@@ -1,118 +1,17 @@
-const languageButton = document.querySelector('.language-button');
-const languageMenu = document.querySelector('.language-menu');
-const supportedLanguages = ['en', 'zh_tw', 'zh_cn'];
-const languageLabels = { en: 'EN', zh_tw: '繁中', zh_cn: '简中' };
-const navCopy = {
-  en: { home: 'Home', work: 'Work', about: 'About', contact: 'Contact' },
-  zh_tw: { home: '首頁', work: '作品', about: '關於我', contact: '聯絡我' },
-  zh_cn: { home: '首页', work: '作品', about: '关于我', contact: '联系我' }
-};
-
-function getLanguage() {
-  const params = new URLSearchParams(window.location.search);
-  const requested = params.get('lang');
-  return supportedLanguages.includes(requested) ? requested : 'en';
-}
-
-function localized(item, lang) {
-  const english = item?.en || {};
-  const selected = item?.[lang] || {};
-  const output = { ...english };
-  Object.keys(selected).forEach((key) => {
-    const value = selected[key];
-    if (Array.isArray(value)) {
-      if (value.length) output[key] = value;
-    } else if (value !== undefined && value !== null && value !== '') {
-      output[key] = value;
-    }
-  });
-  return output;
-}
-
-function setText(id, value) {
-  const el = document.getElementById(id);
-  if (el && value !== undefined) el.textContent = value;
-}
-
-function mediaMarkup(project, featured = false) {
-  const classes = featured ? 'project-media project-media-featured' : 'project-media';
-  if (!project.image) return `<div class="${classes}"></div>`;
-  return `<div class="${classes}"><img src="${project.image}" alt="${project.title || 'Project image'}" loading="lazy"></div>`;
-}
-
-function chipsMarkup(tags = []) {
-  return `<div class="chips">${tags.map(tag => `<span class="chip">${tag}</span>`).join('')}</div>`;
-}
-
-function renderHome(data, lang) {
-  const hero = localized(data.hero, lang);
-  setText('hero-eyebrow', hero.eyebrow);
-  const headline = document.getElementById('hero-headline');
-  if (headline) headline.innerHTML = (hero.headline || '').replace(/\n/g, '<br>');
-  setText('hero-description', hero.description);
-  const heroCta = document.getElementById('hero-cta');
-  if (heroCta) { heroCta.href = data.hero.cta_link || './about.html'; heroCta.innerHTML = `${hero.cta_label || 'About me'} <span aria-hidden="true">→</span>`; }
-
-  const workCopy = localized(data.work.copy, lang);
-  setText('work-title', workCopy.title);
-  const viewAll = document.getElementById('work-view-all');
-  if (viewAll) { viewAll.href = data.work.view_all_link || './work.html'; viewAll.innerHTML = `${workCopy.view_all_label || 'View all work'} <span aria-hidden="true">→</span>`; }
-
-  const projects = (data.work.projects || []).map(p => ({ ...p, ...localized(p, lang) }));
-  const featuredId = data.work.featured_project;
-  const featured = projects.find(p => p.id === featuredId) || projects[0];
-  const regular = projects.filter(p => !featured || p.id !== featured.id);
-  const projectsRoot = document.getElementById('home-projects');
-  if (projectsRoot && featured) {
-    projectsRoot.innerHTML = `<article class="featured-project">${mediaMarkup(featured, true)}<div class="featured-copy"><p class="eyebrow">${featured.eyebrow || 'FEATURED WORK'}</p><h3>${featured.title}</h3><p>${featured.description || ''}</p>${chipsMarkup(featured.tags)}</div></article><div class="project-grid">${regular.map(p => `<article class="project-card">${mediaMarkup(p)}<h3>${p.title}</h3><p>${p.description || ''}</p>${chipsMarkup(p.tags)}</article>`).join('')}</div>`;
-  }
-
-  const skillsCopy = localized(data.skills.copy, lang);
-  setText('skills-title', skillsCopy.title);
-  setText('skills-intro', skillsCopy.intro);
-  const capabilityGrid = document.getElementById('capability-grid');
-  if (capabilityGrid) capabilityGrid.innerHTML = (data.skills.capabilities || []).map(item => {
-    const copy = localized(item, lang);
-    return `<article class="capability"><div class="capability-icon" aria-hidden="true"></div><div><h3>${copy.title || ''}</h3><p>${copy.description || ''}</p><span>${copy.keywords || ''}</span></div></article>`;
-  }).join('');
-
-  const contact = localized(data.contact, lang);
-  setText('contact-headline', contact.headline);
-  setText('contact-description', contact.description);
-  const contactLink = document.getElementById('contact-link');
-  if (contactLink) { contactLink.href = `mailto:${data.contact.email}`; contactLink.innerHTML = `${contact.link_label || 'Email me'} <span aria-hidden="true">→</span>`; }
-
-  document.documentElement.lang = lang === 'en' ? 'en' : (lang === 'zh_tw' ? 'zh-Hant' : 'zh-Hans');
-  document.querySelectorAll('[data-i18n-nav]').forEach(el => { el.textContent = navCopy[lang][el.dataset.i18nNav]; });
-}
-
-if (languageButton && languageMenu) {
-  languageButton.addEventListener('click', () => {
-    const opening = languageMenu.hidden;
-    languageMenu.hidden = !opening;
-    languageButton.classList.toggle('is-open', opening);
-    languageButton.setAttribute('aria-expanded', String(opening));
-  });
-  languageMenu.querySelectorAll('[data-lang]').forEach(button => {
-    button.addEventListener('click', () => {
-      const url = new URL(window.location.href);
-      if (button.dataset.lang === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', button.dataset.lang);
-      window.location.href = url.toString();
-    });
-  });
-}
-
-const siteHeader = document.querySelector('.site-header');
-if (siteHeader) {
-  const updateHeaderState = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 16);
-  updateHeaderState();
-  window.addEventListener('scroll', updateHeaderState, { passive: true });
-}
-
-if (document.body.dataset.cmsPage === 'home') {
-  const lang = getLanguage();
-  fetch('./content/home.json', { cache: 'no-store' })
-    .then(response => { if (!response.ok) throw new Error('Home content could not be loaded.'); return response.json(); })
-    .then(data => renderHome(data, lang))
-    .catch(error => console.error(error));
-}
+const languageButton=document.querySelector('.language-button');const languageMenu=document.querySelector('.language-menu');const supportedLanguages=['en','zh_tw','zh_cn'];const navCopy={en:{home:'Home',work:'Work',about:'About',contact:'Contact'},zh_tw:{home:'首頁',work:'作品',about:'關於我',contact:'聯絡我'},zh_cn:{home:'首页',work:'作品',about:'关于我',contact:'联系我'}};
+function getLanguage(){const p=new URLSearchParams(location.search),l=p.get('lang');return supportedLanguages.includes(l)?l:'en'}
+function localized(item,l){const e=item?.en||{},s=item?.[l]||{},o={...e};Object.keys(s).forEach(k=>{const v=s[k];if(Array.isArray(v)){if(v.length)o[k]=v}else if(v!==undefined&&v!==null&&v!=='')o[k]=v});return o}
+function setText(id,v){const e=document.getElementById(id);if(e&&v!==undefined)e.textContent=v}
+function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function applyLanguage(l){document.documentElement.lang=l==='en'?'en':l==='zh_tw'?'zh-Hant':'zh-Hans';document.querySelectorAll('[data-i18n-nav]').forEach(e=>e.textContent=navCopy[l][e.dataset.i18nNav])}
+function mediaMarkup(p,f=false){const c=f?'project-media project-media-featured':'project-media';return p.image?`<div class="${c}"><img src="${esc(p.image)}" alt="${esc(p.title||'Project image')}" loading="lazy"></div>`:`<div class="${c}"></div>`}
+function chipsMarkup(t=[]){return `<div class="chips">${t.map(x=>`<span class="chip">${esc(typeof x==='string'?x:x.tag||'')}</span>`).join('')}</div>`}
+function renderHome(d,l){const h=localized(d.hero,l);setText('hero-eyebrow',h.eyebrow);setText('hero-headline',h.headline);setText('hero-description',h.description);const hc=document.getElementById('hero-cta');if(hc){hc.href=d.hero.cta_link||'./about.html';hc.innerHTML=`${esc(h.cta_label||'About me')} <span>→</span>`}const wc=localized(d.work.copy,l);setText('work-title',wc.title);const va=document.getElementById('work-view-all');if(va){va.href=d.work.view_all_link||'./work.html';va.innerHTML=`${esc(wc.view_all_label||'View all work')} <span>→</span>`}const ps=(d.work.projects||[]).map(p=>({...p,...localized(p,l)})),f=ps.find(p=>p.id===d.work.featured_project)||ps[0],r=ps.filter(p=>!f||p.id!==f.id),root=document.getElementById('home-projects');if(root&&f)root.innerHTML=`<article class="featured-project">${mediaMarkup(f,true)}<div class="featured-copy"><p class="eyebrow">${esc(f.eyebrow||'FEATURED WORK')}</p><h3>${esc(f.title)}</h3><p>${esc(f.description)}</p>${chipsMarkup(f.tags)}</div></article><div class="project-grid">${r.map(p=>`<article class="project-card">${mediaMarkup(p)}<h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>${chipsMarkup(p.tags)}</article>`).join('')}</div>`;const sc=localized(d.skills.copy,l);setText('skills-title',sc.title);setText('skills-intro',sc.intro);const cg=document.getElementById('capability-grid');if(cg)cg.innerHTML=(d.skills.capabilities||[]).map(i=>{const c=localized(i,l);return `<article class="capability"><div class="capability-icon"></div><div><h3>${esc(c.title)}</h3><p>${esc(c.description)}</p><span>${esc(c.keywords)}</span></div></article>`}).join('');const ct=localized(d.contact,l);setText('contact-headline',ct.headline);setText('contact-description',ct.description);const cl=document.getElementById('contact-link');if(cl){cl.href=`mailto:${d.contact.email}`;cl.innerHTML=`${esc(ct.link_label||'Email me')} <span>→</span>`}}
+function renderWork(d,l){const c=localized(d,l);setText('work-page-title',c.title);setText('work-page-intro',c.intro);setText('work-section-title',c.section_title);setText('work-section-note',c.section_note);const g=document.getElementById('work-overview-grid');if(g)g.innerHTML=(d.projects||[]).map(p=>{const x=localized(p,l),img=p.image?`<img src="${esc(p.image)}" alt="${esc(x.title)}" loading="lazy">`:'';return `<article class="work-overview-card"><a class="work-overview-media" href="${esc(p.link)}">${img}</a><p class="work-kicker">${esc(x.kicker)}</p><h3>${esc(x.title)}</h3><p class="work-description">${esc(x.description)}</p><p class="work-meta">${esc(x.meta)}</p><a class="work-case-link" href="${esc(p.link)}">${esc(c.case_label||'View case study')} →</a></article>`}).join('')}
+function renderAbout(d,l){const c=localized(d,l);setText('about-title',c.title);setText('about-bio',c.bio);setText('beyond-title',c.beyond_title);setText('beyond-intro',c.beyond_intro);const p=document.getElementById('about-portrait');if(p&&d.portrait)p.style.backgroundImage=`url('${d.portrait}')`;const list=document.getElementById('experience-list');if(list)list.innerHTML=(d.experience||[]).map(i=>{const x=localized(i,l);return `<div class="experience-row"><span>${esc(i.period)}</span><div><h3>${esc(x.role)}</h3><small>${esc(x.company)}</small></div><p>${esc(x.description)}</p></div>`}).join('');[['resume-en','en'],['resume-zh-tw','zh_tw'],['resume-zh-cn','zh_cn']].forEach(([id,k])=>{const a=document.getElementById(id);if(a&&d.resumes?.[k])a.href=d.resumes[k]})}
+function renderContact(d,l){const c=localized(d,l);setText('contact-page-title',c.title);setText('contact-page-intro',c.intro);setText('contact-closing-title',c.closing_title);setText('contact-closing-copy',c.closing_copy);setText('contact-email-display',d.email);setText('wechat-id',d.wechat_id);const e=document.getElementById('contact-email-link');if(e)e.href=`mailto:${d.email}`;const li=document.getElementById('contact-linkedin');if(li&&d.linkedin){li.href=d.linkedin;li.target='_blank';li.rel='noopener'}const qr=document.getElementById('wechat-qr');if(qr&&d.wechat_qr)qr.innerHTML=`<img src="${esc(d.wechat_qr)}" alt="WeChat QR code">`}
+function sectionCopy(s,l,key){if(l==='en')return s[`${key}_en`]||'';return s[`${key}_${l}`]||s[`${key}_en`]||''}
+function renderCase(d,l){const c=localized(d,l);setText('case-kicker',c.kicker);setText('case-title',c.title);setText('case-summary',c.summary);setText('case-overview',c.overview);document.title=`${c.title||'Project'} — Sandy Wu`;const hm=document.getElementById('case-hero-media');if(hm&&d.hero_image)hm.innerHTML=`<img src="${esc(d.hero_image)}" alt="${esc(c.title)}">`;const facts=document.getElementById('case-facts');if(facts)facts.innerHTML=(d.facts||[]).map(f=>`<div><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join('');const root=document.getElementById('case-sections');if(root)root.innerHTML=(d.sections||[]).map(s=>{if(s.type==='metrics')return `<article class="case-module"><div class="case-module-head outcome-head"><h2>${esc(sectionCopy(s,l,'heading'))}</h2></div><div class="proof-grid">${(s.items||[]).map(i=>`<div><strong>${esc(i.value)}</strong><span>${esc(i.description)}</span></div>`).join('')}</div></article>`;if(s.type==='reflection')return `<article class="reflection"><h2>${esc(sectionCopy(s,l,'heading'))}</h2><p>${esc(sectionCopy(s,l,'copy'))}</p></article>`;const imgs=[s.image_1,s.image_2].filter(Boolean);let media='';if(imgs.length===2||s.layout==='two-images')media=`<div class="case-media-row">${imgs.map(i=>`<div class="case-media"><img src="${esc(i)}" alt=""></div>`).join('')}</div>`;else if(imgs.length)media=`<div class="case-media large"><img src="${esc(imgs[0])}" alt=""></div>`;else media=`<div class="case-media large"></div>`;return `<article class="case-module"><div class="case-module-head"><h2>${esc(sectionCopy(s,l,'heading'))}</h2><p>${esc(sectionCopy(s,l,'copy'))}</p></div>${media}</article>`}).join('')}
+if(languageButton&&languageMenu){languageButton.addEventListener('click',()=>{languageMenu.hidden=!languageMenu.hidden});languageMenu.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{const u=new URL(location.href);b.dataset.lang==='en'?u.searchParams.delete('lang'):u.searchParams.set('lang',b.dataset.lang);location.href=u}))}
+const header=document.querySelector('.site-header');if(header){const f=()=>header.classList.toggle('is-scrolled',scrollY>16);f();addEventListener('scroll',f,{passive:true})}
+const page=document.body.dataset.cmsPage,l=getLanguage();applyLanguage(l);const loads={home:['./content/home.json',renderHome],work:['./content/work.json',renderWork],about:['./content/about.json',renderAbout],contact:['./content/contact.json',renderContact]};if(loads[page]){const [url,fn]=loads[page];fetch(url,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Content load failed');return r.json()}).then(d=>fn(d,l)).catch(console.error)}if(page==='case-study'){const id=new URLSearchParams(location.search).get('id')||'or-dashboard';fetch(`./content/case-studies/${encodeURIComponent(id)}.json`,{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Case study not found');return r.json()}).then(d=>renderCase(d,l)).catch(console.error)}
