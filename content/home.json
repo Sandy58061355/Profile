@@ -1,1 +1,65 @@
-{"hero":{"eyebrow":"PRODUCT MANAGER · AI / CONSUMER / DIGITAL PRODUCTS","headline":"I turn complex problems\ninto clear product experiences.","description":"A short introduction about who I am, what I build, and the kind of product problems I care about.","cta_label":"About me","cta_link":"./about.html"},"work":{"title":"Work","view_all_label":"View all work","view_all_link":"./work.html","projects":[{"title":"OR Dashboard","description":"Smart operating room product planned from 0→1, focused on visibility, workflow and AI-assisted operation.","featured":true,"eyebrow":"FEATURED WORK","image":"","tags":["0→1 Product","AI Healthcare","Product Strategy"]},{"title":"AI Music Factory","description":"AI-powered consumer music creation concept.","featured":false,"eyebrow":"","image":"","tags":["AI Product","Music","Consumer"]},{"title":"AllLink","description":"Campus social product built and operated from 0→1.","featured":false,"eyebrow":"","image":"","tags":["1,000+ DAU","Growth","Social"]},{"title":"Smart Dove","description":"Award-winning product innovation project.","featured":false,"eyebrow":"","image":"","tags":["National Champion","IoT","Innovation"]}]},"skills":{"title":"What I’m good at","intro":"I turn ambiguous problems into clear product direction — and work across strategy, design, AI, and delivery to bring ideas into reality.","capabilities":[{"title":"Product Strategy","description":"Turn ambiguous problems into clear product direction.","keywords":"Problem framing · Prioritization · Roadmap"},{"title":"Product & UX Design","description":"Turn ideas into clear flows and usable product experiences.","keywords":"UX flows · Prototyping · PRD / Interaction"},{"title":"AI × Product","description":"Find where AI creates real user value — not AI for AI’s sake.","keywords":"AI use cases · Prototyping · Product integration"},{"title":"Delivery & Growth","description":"Bring products from plan to launch, learn from users, and keep improving.","keywords":"Cross-functional · Launch · Feedback / Iteration"}]},"contact":{"headline":"Let’s build something meaningful.","description":"If you’d like to talk about products, opportunities or collaborations, feel free to reach out.","link_label":"Email me","email":"your-email@example.com"}}
+{
+  "hero": {
+    "en": {
+      "eyebrow": "PRODUCT MANAGER · AI / CONSUMER / DIGITAL PRODUCTS",
+      "headline": "I turn complex problems\ninto clear product experiences.",
+      "description": "A short introduction about who I am, what I build, and the kind of product problems I care about.",
+      "cta_label": "About me"
+    },
+    "zh_tw": {},
+    "zh_cn": {},
+    "cta_link": "./about.html"
+  },
+  "work": {
+    "copy": {
+      "en": {"title": "Work", "view_all_label": "View all work"},
+      "zh_tw": {},
+      "zh_cn": {}
+    },
+    "view_all_link": "./work.html",
+    "featured_project": "or-dashboard",
+    "projects": [
+      {
+        "id": "or-dashboard",
+        "image": "",
+        "en": {"title":"OR Dashboard","description":"Smart operating room product planned from 0→1, focused on visibility, workflow and AI-assisted operation.","eyebrow":"FEATURED WORK","tags":["0→1 Product","AI Healthcare","Product Strategy"]},
+        "zh_tw": {}, "zh_cn": {}
+      },
+      {
+        "id": "ai-music-factory",
+        "image": "",
+        "en": {"title":"AI Music Factory","description":"AI-powered consumer music creation concept.","eyebrow":"","tags":["AI Product","Music","Consumer"]},
+        "zh_tw": {}, "zh_cn": {}
+      },
+      {
+        "id": "alllink",
+        "image": "",
+        "en": {"title":"AllLink","description":"Campus social product built and operated from 0→1.","eyebrow":"","tags":["1,000+ DAU","Growth","Social"]},
+        "zh_tw": {}, "zh_cn": {}
+      },
+      {
+        "id": "smart-dove",
+        "image": "",
+        "en": {"title":"Smart Dove","description":"Award-winning product innovation project.","eyebrow":"","tags":["National Champion","IoT","Innovation"]},
+        "zh_tw": {}, "zh_cn": {}
+      }
+    ]
+  },
+  "skills": {
+    "copy": {
+      "en": {"title":"What I’m good at","intro":"I turn ambiguous problems into clear product direction — and work across strategy, design, AI, and delivery to bring ideas into reality."},
+      "zh_tw": {}, "zh_cn": {}
+    },
+    "capabilities": [
+      {"id":"product-strategy","en":{"title":"Product Strategy","description":"Turn ambiguous problems into clear product direction.","keywords":"Problem framing · Prioritization · Roadmap"},"zh_tw":{},"zh_cn":{}},
+      {"id":"product-ux-design","en":{"title":"Product & UX Design","description":"Turn ideas into clear flows and usable product experiences.","keywords":"UX flows · Prototyping · PRD / Interaction"},"zh_tw":{},"zh_cn":{}},
+      {"id":"ai-product","en":{"title":"AI × Product","description":"Find where AI creates real user value — not AI for AI’s sake.","keywords":"AI use cases · Prototyping · Product integration"},"zh_tw":{},"zh_cn":{}},
+      {"id":"delivery-growth","en":{"title":"Delivery & Growth","description":"Bring products from plan to launch, learn from users, and keep improving.","keywords":"Cross-functional · Launch · Feedback / Iteration"},"zh_tw":{},"zh_cn":{}}
+    ]
+  },
+  "contact": {
+    "en": {"headline":"Let’s build something meaningful.","description":"If you’d like to talk about products, opportunities or collaborations, feel free to reach out.","link_label":"Email me"},
+    "zh_tw": {}, "zh_cn": {},
+    "email": "your-email@example.com"
+  }
+}
