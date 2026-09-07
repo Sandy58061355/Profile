@@ -19,51 +19,192 @@ collections:
             name: hero
             widget: object
             fields:
-              - { label: Eyebrow, name: eyebrow, widget: string }
-              - { label: Headline, name: headline, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: CTA label, name: cta_label, widget: string }
+              - label: English
+                name: en
+                widget: object
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string }
+                  - { label: Headline, name: headline, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: CTA label, name: cta_label, widget: string }
+              - label: 繁體中文
+                name: zh_tw
+                widget: object
+                required: false
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: string, required: false }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: CTA label, name: cta_label, widget: string, required: false }
+              - label: 简体中文
+                name: zh_cn
+                widget: object
+                required: false
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: string, required: false }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: CTA label, name: cta_label, widget: string, required: false }
               - { label: CTA link, name: cta_link, widget: string }
           - label: Work
             name: work
             widget: object
             fields:
-              - { label: Section title, name: title, widget: string }
-              - { label: View all label, name: view_all_label, widget: string }
+              - label: Section copy
+                name: copy
+                widget: object
+                fields:
+                  - label: English
+                    name: en
+                    widget: object
+                    fields:
+                      - { label: Section title, name: title, widget: string }
+                      - { label: View all label, name: view_all_label, widget: string }
+                  - label: 繁體中文
+                    name: zh_tw
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Section title, name: title, widget: string, required: false }
+                      - { label: View all label, name: view_all_label, widget: string, required: false }
+                  - label: 简体中文
+                    name: zh_cn
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Section title, name: title, widget: string, required: false }
+                      - { label: View all label, name: view_all_label, widget: string, required: false }
               - { label: View all link, name: view_all_link, widget: string }
+              - label: Featured project
+                name: featured_project
+                widget: select
+                options: [or-dashboard, ai-music-factory, alllink, smart-dove]
               - label: Projects
                 name: projects
                 widget: list
-                summary: '{{fields.title}}'
+                summary: '{{fields.id}}'
                 fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
-                  - { label: Featured, name: featured, widget: boolean, default: false }
-                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Project ID, name: id, widget: string, hint: 'Stable internal ID, e.g. or-dashboard' }
                   - { label: Image, name: image, widget: image, required: false }
-                  - label: Tags
-                    name: tags
-                    widget: list
-                    field: { label: Tag, name: tag, widget: string }
+                  - label: English
+                    name: en
+                    widget: object
+                    fields:
+                      - { label: Title, name: title, widget: string }
+                      - { label: Description, name: description, widget: text }
+                      - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                      - label: Tags
+                        name: tags
+                        widget: list
+                        field: { label: Tag, name: tag, widget: string }
+                  - label: 繁體中文
+                    name: zh_tw
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Title, name: title, widget: string, required: false }
+                      - { label: Description, name: description, widget: text, required: false }
+                      - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                      - label: Tags
+                        name: tags
+                        widget: list
+                        required: false
+                        field: { label: Tag, name: tag, widget: string, required: false }
+                  - label: 简体中文
+                    name: zh_cn
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Title, name: title, widget: string, required: false }
+                      - { label: Description, name: description, widget: text, required: false }
+                      - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                      - label: Tags
+                        name: tags
+                        widget: list
+                        required: false
+                        field: { label: Tag, name: tag, widget: string, required: false }
           - label: Skills
             name: skills
             widget: object
             fields:
-              - { label: Section title, name: title, widget: string }
-              - { label: Intro, name: intro, widget: text }
+              - label: Section copy
+                name: copy
+                widget: object
+                fields:
+                  - label: English
+                    name: en
+                    widget: object
+                    fields:
+                      - { label: Section title, name: title, widget: string }
+                      - { label: Intro, name: intro, widget: text }
+                  - label: 繁體中文
+                    name: zh_tw
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Section title, name: title, widget: string, required: false }
+                      - { label: Intro, name: intro, widget: text, required: false }
+                  - label: 简体中文
+                    name: zh_cn
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Section title, name: title, widget: string, required: false }
+                      - { label: Intro, name: intro, widget: text, required: false }
               - label: Capabilities
                 name: capabilities
                 widget: list
-                summary: '{{fields.title}}'
+                summary: '{{fields.id}}'
                 fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
-                  - { label: Keywords, name: keywords, widget: string }
+                  - { label: Capability ID, name: id, widget: string }
+                  - label: English
+                    name: en
+                    widget: object
+                    fields:
+                      - { label: Title, name: title, widget: string }
+                      - { label: Description, name: description, widget: text }
+                      - { label: Keywords, name: keywords, widget: string }
+                  - label: 繁體中文
+                    name: zh_tw
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Title, name: title, widget: string, required: false }
+                      - { label: Description, name: description, widget: text, required: false }
+                      - { label: Keywords, name: keywords, widget: string, required: false }
+                  - label: 简体中文
+                    name: zh_cn
+                    widget: object
+                    required: false
+                    fields:
+                      - { label: Title, name: title, widget: string, required: false }
+                      - { label: Description, name: description, widget: text, required: false }
+                      - { label: Keywords, name: keywords, widget: string, required: false }
           - label: Contact CTA
             name: contact
             widget: object
             fields:
-              - { label: Headline, name: headline, widget: string }
-              - { label: Description, name: description, widget: text }
-              - { label: Link label, name: link_label, widget: string }
+              - label: English
+                name: en
+                widget: object
+                fields:
+                  - { label: Headline, name: headline, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Link label, name: link_label, widget: string }
+              - label: 繁體中文
+                name: zh_tw
+                widget: object
+                required: false
+                fields:
+                  - { label: Headline, name: headline, widget: string, required: false }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: Link label, name: link_label, widget: string, required: false }
+              - label: 简体中文
+                name: zh_cn
+                widget: object
+                required: false
+                fields:
+                  - { label: Headline, name: headline, widget: string, required: false }
+                  - { label: Description, name: description, widget: text, required: false }
+                  - { label: Link label, name: link_label, widget: string, required: false }
               - { label: Email, name: email, widget: string }
