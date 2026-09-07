@@ -1,0 +1,69 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+backend:
+  name: github
+  repo: Sandy58061355/Profile
+  branch: master
+  auth_methods: [token]
+media_folder: assets/uploads
+public_folder: /assets/uploads
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home
+        file: content/home.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: CTA label, name: cta_label, widget: string }
+              - { label: CTA link, name: cta_link, widget: string }
+          - label: Work
+            name: work
+            widget: object
+            fields:
+              - { label: Section title, name: title, widget: string }
+              - { label: View all label, name: view_all_label, widget: string }
+              - { label: View all link, name: view_all_link, widget: string }
+              - label: Projects
+                name: projects
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Featured, name: featured, widget: boolean, default: false }
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Image, name: image, widget: image, required: false }
+                  - label: Tags
+                    name: tags
+                    widget: list
+                    field: { label: Tag, name: tag, widget: string }
+          - label: Skills
+            name: skills
+            widget: object
+            fields:
+              - { label: Section title, name: title, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - label: Capabilities
+                name: capabilities
+                widget: list
+                summary: '{{fields.title}}'
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Keywords, name: keywords, widget: string }
+          - label: Contact CTA
+            name: contact
+            widget: object
+            fields:
+              - { label: Headline, name: headline, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Link label, name: link_label, widget: string }
+              - { label: Email, name: email, widget: string }
