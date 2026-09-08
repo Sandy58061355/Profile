@@ -8,7 +8,7 @@
     },
     "zh_tw": {
       "eyebrow": "創新創業 / 產品設計與策略 / AI BUILDER",
-      "headline": "對問題保持好奇， 實現有限資源下的最優解",
+      "headline": "對問題保持好奇，\n實現有限資源下的最優解",
       "description": "7+ 年產品與創業實踐經驗，橫跨 C 端內容、社交、AI、B 端系統與智慧醫療，具備從 0→1 探索、產品落地到持續迭代的實戰經驗。曾獲中國黑客松冠軍，受邀赴矽谷向 HP 全球 CEO 展示產品，產品後續獲推至 Facebook CEO。",
       "cta_label": "關於我"
     },
@@ -18,238 +18,37 @@
       "description": "",
       "cta_label": ""
     },
+    "image": "/assets/uploads/個人照2.jpg",
     "cta_link": "./about.html"
   },
   "work": {
     "copy": {
-      "en": {
-        "title": "Work",
-        "view_all_label": "View all work"
-      },
-      "zh_tw": {
-        "title": "",
-        "view_all_label": ""
-      },
-      "zh_cn": {
-        "title": "",
-        "view_all_label": ""
-      }
+      "en": {"title": "Work","view_all_label": "View all work"},
+      "zh_tw": {"title": "","view_all_label": ""},
+      "zh_cn": {"title": "","view_all_label": ""}
     },
     "view_all_link": "./work.html",
     "featured_project": "or-dashboard",
     "projects": [
-      {
-        "id": "or-dashboard",
-        "image": "",
-        "en": {
-          "title": "OR Dashboard",
-          "description": "Smart operating room product planned from 0→1, focused on visibility, workflow and AI-assisted operation.",
-          "eyebrow": "FEATURED WORK",
-          "tags": [
-            "0→1 Product",
-            "AI Healthcare",
-            "Product Strategy"
-          ]
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        }
-      },
-      {
-        "id": "ai-music-factory",
-        "image": "",
-        "en": {
-          "title": "AI Music Factory",
-          "description": "AI-powered consumer music creation concept.",
-          "eyebrow": "",
-          "tags": [
-            "AI Product",
-            "Music",
-            "Consumer"
-          ]
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        }
-      },
-      {
-        "id": "alllink",
-        "image": "",
-        "en": {
-          "title": "AllLink",
-          "description": "Campus social product built and operated from 0→1.",
-          "eyebrow": "",
-          "tags": [
-            "1,000+ DAU",
-            "Growth",
-            "Social"
-          ]
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        }
-      },
-      {
-        "id": "smart-dove",
-        "image": "",
-        "en": {
-          "title": "Smart Dove",
-          "description": "Award-winning product innovation project.",
-          "eyebrow": "",
-          "tags": [
-            "National Champion",
-            "IoT",
-            "Innovation"
-          ]
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "eyebrow": "",
-          "tags": []
-        }
-      }
+      {"id":"or-dashboard","image":"","en":{"title":"OR Dashboard","description":"Smart operating room product planned from 0→1, focused on visibility, workflow and AI-assisted operation.","eyebrow":"FEATURED WORK","tags":["0→1 Product","AI Healthcare","Product Strategy"]},"zh_tw":{"title":"","description":"","eyebrow":"","tags":[]},"zh_cn":{"title":"","description":"","eyebrow":"","tags":[]}},
+      {"id":"ai-music-factory","image":"","en":{"title":"AI Music Factory","description":"AI-powered consumer music creation concept.","eyebrow":"","tags":["AI Product","Music","Consumer"]},"zh_tw":{"title":"","description":"","eyebrow":"","tags":[]},"zh_cn":{"title":"","description":"","eyebrow":"","tags":[]}},
+      {"id":"alllink","image":"","en":{"title":"AllLink","description":"Campus social product built and operated from 0→1.","eyebrow":"","tags":["1,000+ DAU","Growth","Social"]},"zh_tw":{"title":"","description":"","eyebrow":"","tags":[]},"zh_cn":{"title":"","description":"","eyebrow":"","tags":[]}},
+      {"id":"smart-dove","image":"","en":{"title":"Smart Dove","description":"Award-winning product innovation project.","eyebrow":"","tags":["National Champion","IoT","Innovation"]},"zh_tw":{"title":"","description":"","eyebrow":"","tags":[]},"zh_cn":{"title":"","description":"","eyebrow":"","tags":[]}}
     ]
   },
   "skills": {
-    "copy": {
-      "en": {
-        "title": "What I’m good at",
-        "intro": "I turn ambiguous problems into clear product direction — and work across strategy, design, AI, and delivery to bring ideas into reality."
-      },
-      "zh_tw": {
-        "title": "",
-        "intro": ""
-      },
-      "zh_cn": {
-        "title": "",
-        "intro": ""
-      }
-    },
+    "copy": {"en":{"title":"What I’m good at","intro":"I turn ambiguous problems into clear product direction — and work across strategy, design, AI, and delivery to bring ideas into reality."},"zh_tw":{"title":"","intro":""},"zh_cn":{"title":"","intro":""}},
     "capabilities": [
-      {
-        "id": "product-strategy",
-        "en": {
-          "title": "Product Strategy",
-          "description": "Turn ambiguous problems into clear product direction.",
-          "keywords": "Problem framing · Prioritization · Roadmap"
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        }
-      },
-      {
-        "id": "product-ux-design",
-        "en": {
-          "title": "Product & UX Design",
-          "description": "Turn ideas into clear flows and usable product experiences.",
-          "keywords": "UX flows · Prototyping · PRD / Interaction"
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        }
-      },
-      {
-        "id": "ai-product",
-        "en": {
-          "title": "AI × Product",
-          "description": "Find where AI creates real user value — not AI for AI’s sake.",
-          "keywords": "AI use cases · Prototyping · Product integration"
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        }
-      },
-      {
-        "id": "delivery-growth",
-        "en": {
-          "title": "Delivery & Growth",
-          "description": "Bring products from plan to launch, learn from users, and keep improving.",
-          "keywords": "Cross-functional · Launch · Feedback / Iteration"
-        },
-        "zh_tw": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        },
-        "zh_cn": {
-          "title": "",
-          "description": "",
-          "keywords": ""
-        }
-      }
+      {"id":"product-strategy","en":{"title":"Product Strategy","description":"Turn ambiguous problems into clear product direction.","keywords":"Problem framing · Prioritization · Roadmap"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}},
+      {"id":"product-ux-design","en":{"title":"Product & UX Design","description":"Turn ideas into clear flows and usable product experiences.","keywords":"UX flows · Prototyping · PRD / Interaction"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}},
+      {"id":"ai-product","en":{"title":"AI × Product","description":"Find where AI creates real user value — not AI for AI’s sake.","keywords":"AI use cases · Prototyping · Product integration"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}},
+      {"id":"delivery-growth","en":{"title":"Delivery & Growth","description":"Bring products from plan to launch, learn from users, and keep improving.","keywords":"Cross-functional · Launch · Feedback / Iteration"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}}
     ]
   },
   "contact": {
-    "en": {
-      "headline": "Let’s build something meaningful.",
-      "description": "If you’d like to talk about products, opportunities or collaborations, feel free to reach out.",
-      "link_label": "Email me"
-    },
-    "zh_tw": {
-      "headline": "",
-      "description": "",
-      "link_label": ""
-    },
-    "zh_cn": {
-      "headline": "",
-      "description": "",
-      "link_label": ""
-    },
-    "email": "your-email@example.com"
+    "en":{"headline":"Let’s build something meaningful.","description":"If you’d like to talk about products, opportunities or collaborations, feel free to reach out.","link_label":"Email me"},
+    "zh_tw":{"headline":"","description":"","link_label":""},
+    "zh_cn":{"headline":"","description":"","link_label":""},
+    "email":"your-email@example.com"
   }
 }
