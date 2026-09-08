@@ -37,7 +37,7 @@ button { font:inherit; }
 .hero h1 { max-width:920px; margin:0; font-size:clamp(44px,4.45vw,64px); line-height:1.4; letter-spacing:0; font-weight:600; }
 .hero-copy { width:720px; max-width:100%; min-height:72px; margin:28px 0; font-size:20px; line-height:1.4; }
 .button-secondary { display:inline-flex; align-items:center; border:1px solid #d6d1c4; border-radius:999px; padding:12px 20px; background:var(--surface); color:var(--muted); font-size:14px; line-height:1.4; transition:background-color .34s ease,color .34s ease,border-color .34s ease,transform .34s ease,box-shadow .34s ease; }
-.button-secondary:hover { background:#4f4d47; color:#f9f7f1; border-color:#4f4d47; transform:translateY(-2px); box-shadow:0 6px 16px rgba(19,19,17,.10); }
+.button-secondary:hover { background:#66635c; color:#f9f7f1; border-color:#66635c; transform:translateY(-2px); box-shadow:0 6px 16px rgba(19,19,17,.10); }
 .button-secondary:focus-visible { outline:2px solid var(--text); outline-offset:3px; }
 .work-section { padding:96px 0 128px; }
 .work-section.section-divider { border-top:0; }
