@@ -37,9 +37,7 @@ button { font:inherit; }
 .hero h1 { max-width:920px; margin:0; font-size:clamp(44px,4.45vw,64px); line-height:1.4; letter-spacing:0; font-weight:600; }
 .hero-copy { width:720px; max-width:100%; min-height:72px; margin:28px 0; font-size:20px; line-height:1.4; }
 .button-secondary { display:inline-flex; align-items:center; position:relative; overflow:hidden; border:1px solid #d6d1c4; border-radius:999px; padding:12px 20px; background:var(--surface); color:var(--muted); font-size:14px; line-height:1.4; transition:background-color .34s ease,color .34s ease,border-color .34s ease,transform .34s ease,box-shadow .34s ease; }
-.button-secondary::before { content:""; position:absolute; left:12px; right:12px; top:3px; height:1px; border-radius:999px; background:rgba(255,255,255,0); transition:background-color .34s ease,box-shadow .34s ease; pointer-events:none; }
 .button-secondary:hover { background:#393834; color:#faf8f2; border-color:#393834; transform:translateY(-2px); box-shadow:0 8px 18px rgba(19,19,17,.18), inset 0 1px 0 rgba(255,255,255,.16); }
-.button-secondary:hover::before { background:rgba(255,255,255,.22); box-shadow:0 1px 5px rgba(255,255,255,.08); }
 .button-secondary:focus-visible { outline:2px solid var(--text); outline-offset:3px; }
 .work-section { padding:96px 0 128px; }
 .work-section.section-divider { border-top:0; }
