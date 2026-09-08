@@ -31,7 +31,7 @@ collections:
                 widget: object
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string }
-                  - { label: Headline, name: headline, widget: string }
+                  - { label: Headline, name: headline, widget: text }
                   - { label: Description, name: description, widget: text }
                   - { label: CTA label, name: cta_label, widget: string }
               - label: 繁體中文
@@ -40,7 +40,7 @@ collections:
                 required: false
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                  - { label: Headline, name: headline, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: text, required: false }
                   - { label: Description, name: description, widget: text, required: false }
                   - { label: CTA label, name: cta_label, widget: string, required: false }
               - label: 简体中文
@@ -49,9 +49,10 @@ collections:
                 required: false
                 fields:
                   - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                  - { label: Headline, name: headline, widget: string, required: false }
+                  - { label: Headline, name: headline, widget: text, required: false }
                   - { label: Description, name: description, widget: text, required: false }
                   - { label: CTA label, name: cta_label, widget: string, required: false }
+              - { label: Hero portrait, name: image, widget: image, required: false, hint: '上傳首頁右側個人照；建議直式 4:5 左右，網站會自動裁切填滿。' }
               - { label: CTA link, name: cta_link, widget: string }
           - label: Work
             name: work
