@@ -7,11 +7,6 @@ backend:
 media_folder: assets/uploads
 public_folder: /assets/uploads
 
-x-i18n: &i18n
-  - { label: English, name: en, widget: text, required: false }
-  - { label: 繁體中文, name: zh_tw, widget: text, required: false }
-  - { label: 简体中文, name: zh_cn, widget: text, required: false }
-
 collections:
   - name: pages
     label: Pages
@@ -21,134 +16,57 @@ collections:
         file: content/home.json
         format: json
         fields:
-          - { label: Home content, name: home_note, widget: hidden, required: false }
           - label: Hero
             name: hero
             widget: object
             fields:
-              - label: English
-                name: en
-                widget: object
-                fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string }
-                  - { label: Headline, name: headline, widget: text }
-                  - { label: Description, name: description, widget: text }
-                  - { label: CTA label, name: cta_label, widget: string }
-              - label: 繁體中文
-                name: zh_tw
-                widget: object
-                required: false
-                fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                  - { label: Headline, name: headline, widget: text, required: false }
-                  - { label: Description, name: description, widget: text, required: false }
-                  - { label: CTA label, name: cta_label, widget: string, required: false }
-              - label: 简体中文
-                name: zh_cn
-                widget: object
-                required: false
-                fields:
-                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                  - { label: Headline, name: headline, widget: text, required: false }
-                  - { label: Description, name: description, widget: text, required: false }
-                  - { label: CTA label, name: cta_label, widget: string, required: false }
-              - { label: Hero portrait, name: image, widget: image, required: false, hint: '上傳首頁右側個人照；建議直式 4:5 左右，網站會自動裁切填滿。' }
+              - { label: English, name: en, widget: object, fields: [{label: Eyebrow, name: eyebrow, widget: string}, {label: Headline, name: headline, widget: text}, {label: Description, name: description, widget: text}, {label: CTA label, name: cta_label, widget: string}] }
+              - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{label: Eyebrow, name: eyebrow, widget: string, required: false}, {label: Headline, name: headline, widget: text, required: false}, {label: Description, name: description, widget: text, required: false}, {label: CTA label, name: cta_label, widget: string, required: false}] }
+              - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{label: Eyebrow, name: eyebrow, widget: string, required: false}, {label: Headline, name: headline, widget: text, required: false}, {label: Description, name: description, widget: text, required: false}, {label: CTA label, name: cta_label, widget: string, required: false}] }
+              - { label: Hero portrait, name: image, widget: image, required: false, hint: '上傳首頁右側個人照；建議直式 4:5 左右。' }
               - { label: CTA link, name: cta_link, widget: string }
           - label: Work
             name: work
             widget: object
             fields:
-              - label: Section copy
-                name: copy
-                widget: object
-                fields:
-                  - label: English
-                    name: en
-                    widget: object
-                    fields:
-                      - { label: Section title, name: title, widget: string }
-                      - { label: View all label, name: view_all_label, widget: string }
-                  - label: 繁體中文
-                    name: zh_tw
-                    widget: object
-                    required: false
-                    fields:
-                      - { label: Section title, name: title, widget: string, required: false }
-                      - { label: View all label, name: view_all_label, widget: string, required: false }
-                  - label: 简体中文
-                    name: zh_cn
-                    widget: object
-                    required: false
-                    fields:
-                      - { label: Section title, name: title, widget: string, required: false }
-                      - { label: View all label, name: view_all_label, widget: string, required: false }
+              - { label: Section copy, name: copy, widget: object, fields: [{label: English, name: en, widget: object, fields: [{label: Section title, name: title, widget: string}, {label: View all label, name: view_all_label, widget: string}]}, {label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{label: Section title, name: title, widget: string, required: false}, {label: View all label, name: view_all_label, widget: string, required: false}]}, {label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{label: Section title, name: title, widget: string, required: false}, {label: View all label, name: view_all_label, widget: string, required: false}]}] }
               - { label: View all link, name: view_all_link, widget: string }
-              - { label: Featured project, name: featured_project, widget: string }
+              - { label: Featured project ID, name: featured_project, widget: string, hint: '填入要放大的專案 ID，例如 or-dashboard。' }
               - label: Projects
                 name: projects
                 widget: list
-                summary: '{{fields.id}}'
+                summary: '{{fields.id}} — {{fields.zh_tw.title}}'
                 fields:
-                  - { label: Project ID, name: id, widget: string }
-                  - { label: Image, name: image, widget: image, required: false }
-                  - label: English
-                    name: en
-                    widget: object
-                    fields:
-                      - { label: Title, name: title, widget: string }
-                      - { label: Description, name: description, widget: text }
-                      - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
-                  - label: 繁體中文
-                    name: zh_tw
-                    widget: object
-                    required: false
-                    fields:
-                      - { label: Title, name: title, widget: string, required: false }
-                      - { label: Description, name: description, widget: text, required: false }
-                      - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string, required: false } }
-                  - label: 简体中文
-                    name: zh_cn
-                    widget: object
-                    required: false
-                    fields:
-                      - { label: Title, name: title, widget: string, required: false }
-                      - { label: Description, name: description, widget: text, required: false }
-                      - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-                      - { label: Tags, name: tags, widget: list, required: false, field: { label: Tag, name: tag, widget: string, required: false } }
+                  - { label: Project ID, name: id, widget: string, hint: '固定識別碼，建議不要隨意修改。' }
+                  - { label: Project image, name: image, widget: image, required: false, hint: '上傳這個專案在首頁顯示的封面圖。' }
+                  - { label: Project detail link, name: link, widget: string, required: false, hint: '例如 ./case-study.html?id=or-dashboard；點圖片或標題會前往此頁。' }
+                  - { label: Image fit, name: image_fit, widget: select, options: [{label: 裁切填滿, value: cover}, {label: 完整顯示, value: contain}], default: cover, required: false }
+                  - { label: Image focus, name: image_position, widget: select, options: [{label: 置中, value: center}, {label: 靠上, value: top}, {label: 靠下, value: bottom}, {label: 靠左, value: left}, {label: 靠右, value: right}], default: center, required: false }
+                  - { label: Image corners, name: media_corners, widget: select, options: [{label: 圓角, value: rounded}, {label: 直角, value: square}], default: rounded, required: false }
+                  - { label: English, name: en, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Eyebrow, name: eyebrow, widget: string, required: false}, {label: Tags, name: tags, widget: list, required: false, field: {label: Tag, name: tag, widget: string}}] }
+                  - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{label: 專案名稱, name: title, widget: string, required: false}, {label: 專案簡介, name: description, widget: text, required: false}, {label: 小標籤, name: eyebrow, widget: string, required: false}, {label: Tags, name: tags, widget: list, required: false, field: {label: Tag, name: tag, widget: string, required: false}}] }
+                  - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{label: Project title, name: title, widget: string, required: false}, {label: Description, name: description, widget: text, required: false}, {label: Eyebrow, name: eyebrow, widget: string, required: false}, {label: Tags, name: tags, widget: list, required: false, field: {label: Tag, name: tag, widget: string, required: false}}] }
           - label: Skills
             name: skills
             widget: object
             fields:
-              - label: Section copy
-                name: copy
-                widget: object
-                fields:
-                  - label: English
-                    name: en
-                    widget: object
-                    fields:
-                      - { label: Section title, name: title, widget: string }
-                      - { label: Intro, name: intro, widget: text }
-                  - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{ label: Section title, name: title, widget: string, required: false }, { label: Intro, name: intro, widget: text, required: false }] }
-                  - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{ label: Section title, name: title, widget: string, required: false }, { label: Intro, name: intro, widget: text, required: false }] }
+              - { label: Section copy, name: copy, widget: object, fields: [{label: English, name: en, widget: object, fields: [{label: Section title, name: title, widget: string}, {label: Intro, name: intro, widget: text}]}, {label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{label: Section title, name: title, widget: string, required: false}, {label: Intro, name: intro, widget: text, required: false}]}, {label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{label: Section title, name: title, widget: string, required: false}, {label: Intro, name: intro, widget: text, required: false}]}] }
               - label: Capabilities
                 name: capabilities
                 widget: list
                 summary: '{{fields.id}}'
                 fields:
                   - { label: Capability ID, name: id, widget: string }
-                  - { label: English, name: en, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }, { label: Keywords, name: keywords, widget: string }] }
-                  - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{ label: Title, name: title, widget: string, required: false }, { label: Description, name: description, widget: text, required: false }, { label: Keywords, name: keywords, widget: string, required: false }] }
-                  - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{ label: Title, name: title, widget: string, required: false }, { label: Description, name: description, widget: text, required: false }, { label: Keywords, name: keywords, widget: string, required: false }] }
+                  - { label: English, name: en, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Keywords, name: keywords, widget: string}] }
+                  - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{label: Title, name: title, widget: string, required: false}, {label: Description, name: description, widget: text, required: false}, {label: Keywords, name: keywords, widget: string, required: false}] }
+                  - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{label: Title, name: title, widget: string, required: false}, {label: Description, name: description, widget: text, required: false}, {label: Keywords, name: keywords, widget: string, required: false}] }
           - label: Contact CTA
             name: contact
             widget: object
             fields:
-              - { label: English, name: en, widget: object, fields: [{ label: Headline, name: headline, widget: string }, { label: Description, name: description, widget: text }, { label: Link label, name: link_label, widget: string }] }
-              - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{ label: Headline, name: headline, widget: string, required: false }, { label: Description, name: description, widget: text, required: false }, { label: Link label, name: link_label, widget: string, required: false }] }
-              - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{ label: Headline, name: headline, widget: string, required: false }, { label: Description, name: description, widget: text, required: false }, { label: Link label, name: link_label, widget: string, required: false }] }
+              - { label: English, name: en, widget: object, fields: [{label: Headline, name: headline, widget: string}, {label: Description, name: description, widget: text}, {label: Link label, name: link_label, widget: string}] }
+              - { label: 繁體中文, name: zh_tw, widget: object, required: false, fields: [{label: Headline, name: headline, widget: string, required: false}, {label: Description, name: description, widget: text, required: false}, {label: Link label, name: link_label, widget: string, required: false}] }
+              - { label: 简体中文, name: zh_cn, widget: object, required: false, fields: [{label: Headline, name: headline, widget: string, required: false}, {label: Description, name: description, widget: text, required: false}, {label: Link label, name: link_label, widget: string, required: false}] }
               - { label: Email, name: email, widget: string }
 
       - name: work
