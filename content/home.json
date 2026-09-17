@@ -74,7 +74,7 @@
       },
       {
         "id": "ai-music-factory",
-        "image": "",
+        "image": "/assets/uploads/造音工廠-首頁.png",
         "link": "./case-study.html?id=ai-music-factory",
         "image_fit": "cover",
         "image_position": "center",
@@ -90,10 +90,14 @@
           ]
         },
         "zh_tw": {
-          "title": "",
-          "description": "",
+          "title": "造音工廠 - AI音樂生成器",
+          "description": "針對非專業使用者缺乏作曲能力、音樂人需要快速獲得靈感的需求，規劃以「關鍵字生成音樂」為核心的 AI 音樂工具，負責從產品定位、功能架構、UI/UX到前端開發實作。",
           "eyebrow": "",
-          "tags": []
+          "tags": [
+            "音樂",
+            "產品設計",
+            "前端開發"
+          ]
         },
         "zh_cn": {
           "title": "",
