@@ -49,7 +49,7 @@
         "en": {
           "title": "OR Dashboard",
           "description": "Smart operating room product planned from 0→1, focused on visibility, workflow and AI-assisted operation.",
-          "eyebrow": "FEATURED WORK",
+          "eyebrow": "",
           "tags": [
             "0→1 Product",
             "AI Healthcare",
@@ -62,7 +62,8 @@
           "eyebrow": "",
           "tags": [
             "0→1 產品",
-            "智慧醫療"
+            "智慧醫療",
+            "AI與IoT應用"
           ]
         },
         "zh_cn": {
