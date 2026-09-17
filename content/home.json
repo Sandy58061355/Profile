@@ -18,6 +18,7 @@
       "description": "",
       "cta_label": ""
     },
+    "image": "",
     "cta_link": "./about.html"
   },
   "work": {
@@ -27,8 +28,8 @@
         "view_all_label": "View all work"
       },
       "zh_tw": {
-        "title": "",
-        "view_all_label": ""
+        "title": "作品",
+        "view_all_label": "查看所有作品"
       },
       "zh_cn": {
         "title": "",
@@ -40,7 +41,7 @@
     "projects": [
       {
         "id": "or-dashboard",
-        "image": "",
+        "image": "/assets/uploads/OR Dashboard 首頁.jpg",
         "link": "./case-study.html?id=or-dashboard",
         "image_fit": "cover",
         "image_position": "center",
@@ -49,10 +50,27 @@
           "title": "OR Dashboard",
           "description": "Smart operating room product planned from 0→1, focused on visibility, workflow and AI-assisted operation.",
           "eyebrow": "FEATURED WORK",
-          "tags": ["0→1 Product", "AI Healthcare", "Product Strategy"]
+          "tags": [
+            "0→1 Product",
+            "AI Healthcare",
+            "Product Strategy"
+          ]
         },
-        "zh_tw": {"title": "", "description": "", "eyebrow": "", "tags": []},
-        "zh_cn": {"title": "", "description": "", "eyebrow": "", "tags": []}
+        "zh_tw": {
+          "title": "OR Dashboard - 智慧手術房整合平台",
+          "description": "整合 AI 影像辨識手術房狀態與 IoT 設備定位，以提升手術房管理效率並降低護理人員工作負擔，預估可將人工確認手術室狀態與協調所需時間降低約 90%。",
+          "eyebrow": "",
+          "tags": [
+            "0→1 產品",
+            "智慧醫療"
+          ]
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        }
       },
       {
         "id": "ai-music-factory",
@@ -65,10 +83,24 @@
           "title": "AI Music Factory",
           "description": "AI-powered consumer music creation concept.",
           "eyebrow": "",
-          "tags": ["AI Product", "Music", "Consumer"]
+          "tags": [
+            "AI Product",
+            "Music",
+            "Consumer"
+          ]
         },
-        "zh_tw": {"title": "", "description": "", "eyebrow": "", "tags": []},
-        "zh_cn": {"title": "", "description": "", "eyebrow": "", "tags": []}
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        }
       },
       {
         "id": "alllink",
@@ -81,10 +113,24 @@
           "title": "AllLink",
           "description": "Campus social product built and operated from 0→1.",
           "eyebrow": "",
-          "tags": ["1,000+ DAU", "Growth", "Social"]
+          "tags": [
+            "1,000+ DAU",
+            "Growth",
+            "Social"
+          ]
         },
-        "zh_tw": {"title": "", "description": "", "eyebrow": "", "tags": []},
-        "zh_cn": {"title": "", "description": "", "eyebrow": "", "tags": []}
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        }
       },
       {
         "id": "smart-dove",
@@ -97,10 +143,24 @@
           "title": "Smart Dove",
           "description": "Award-winning product innovation project.",
           "eyebrow": "",
-          "tags": ["National Champion", "IoT", "Innovation"]
+          "tags": [
+            "National Champion",
+            "IoT",
+            "Innovation"
+          ]
         },
-        "zh_tw": {"title": "", "description": "", "eyebrow": "", "tags": []},
-        "zh_cn": {"title": "", "description": "", "eyebrow": "", "tags": []}
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "eyebrow": "",
+          "tags": []
+        }
       }
     ]
   },
@@ -110,14 +170,88 @@
         "title": "What I’m good at",
         "intro": "I turn ambiguous problems into clear product direction — and work across strategy, design, AI, and delivery to bring ideas into reality."
       },
-      "zh_tw": {"title": "", "intro": ""},
-      "zh_cn": {"title": "", "intro": ""}
+      "zh_tw": {
+        "title": "",
+        "intro": ""
+      },
+      "zh_cn": {
+        "title": "",
+        "intro": ""
+      }
     },
     "capabilities": [
-      {"id":"product-strategy","en":{"title":"Product Strategy","description":"Turn ambiguous problems into clear product direction.","keywords":"Problem framing · Prioritization · Roadmap"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}},
-      {"id":"product-ux-design","en":{"title":"Product & UX Design","description":"Turn ideas into clear flows and usable product experiences.","keywords":"UX flows · Prototyping · PRD / Interaction"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}},
-      {"id":"ai-product","en":{"title":"AI × Product","description":"Find where AI creates real user value — not AI for AI’s sake.","keywords":"AI use cases · Prototyping · Product integration"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}},
-      {"id":"delivery-growth","en":{"title":"Delivery & Growth","description":"Bring products from plan to launch, learn from users, and keep improving.","keywords":"Cross-functional · Launch · Feedback / Iteration"},"zh_tw":{"title":"","description":"","keywords":""},"zh_cn":{"title":"","description":"","keywords":""}}
+      {
+        "id": "product-strategy",
+        "en": {
+          "title": "Product Strategy",
+          "description": "Turn ambiguous problems into clear product direction.",
+          "keywords": "Problem framing · Prioritization · Roadmap"
+        },
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        }
+      },
+      {
+        "id": "product-ux-design",
+        "en": {
+          "title": "Product & UX Design",
+          "description": "Turn ideas into clear flows and usable product experiences.",
+          "keywords": "UX flows · Prototyping · PRD / Interaction"
+        },
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        }
+      },
+      {
+        "id": "ai-product",
+        "en": {
+          "title": "AI × Product",
+          "description": "Find where AI creates real user value — not AI for AI’s sake.",
+          "keywords": "AI use cases · Prototyping · Product integration"
+        },
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        }
+      },
+      {
+        "id": "delivery-growth",
+        "en": {
+          "title": "Delivery & Growth",
+          "description": "Bring products from plan to launch, learn from users, and keep improving.",
+          "keywords": "Cross-functional · Launch · Feedback / Iteration"
+        },
+        "zh_tw": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        },
+        "zh_cn": {
+          "title": "",
+          "description": "",
+          "keywords": ""
+        }
+      }
     ]
   },
   "contact": {
@@ -126,8 +260,16 @@
       "description": "If you’d like to talk about products, opportunities or collaborations, feel free to reach out.",
       "link_label": "Email me"
     },
-    "zh_tw": {"headline": "", "description": "", "link_label": ""},
-    "zh_cn": {"headline": "", "description": "", "link_label": ""},
+    "zh_tw": {
+      "headline": "",
+      "description": "",
+      "link_label": ""
+    },
+    "zh_cn": {
+      "headline": "",
+      "description": "",
+      "link_label": ""
+    },
     "email": "your-email@example.com"
   }
 }
