@@ -110,7 +110,7 @@
         "id": "alllink",
         "image": "/assets/uploads/AllLink-二手交易頁面.png",
         "link": "./case-study.html?id=alllink",
-        "image_fit": "cover",
+        "image_fit": "contain",
         "image_position": "center",
         "media_corners": "rounded",
         "en": {
