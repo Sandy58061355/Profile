@@ -91,7 +91,7 @@
         },
         "zh_tw": {
           "title": "造音工廠 - AI音樂生成器",
-          "description": "針對非專業使用者缺乏作曲能力、音樂人需要快速獲得靈感的需求，規劃以「關鍵字生成音樂」為核心的 AI 音樂工具，負責從產品定位、功能架構、UI/UX到前端開發實作。",
+          "description": "針對非專業使用者缺乏作曲能力、音樂人需要快速獲得靈感的需求，規劃以「關鍵字生成音樂」為核心的 AI 音樂工具。",
           "eyebrow": "",
           "tags": [
             "音樂",
@@ -108,7 +108,7 @@
       },
       {
         "id": "alllink",
-        "image": "",
+        "image": "/assets/uploads/AllLink-二手交易頁面.png",
         "link": "./case-study.html?id=alllink",
         "image_fit": "cover",
         "image_position": "center",
@@ -124,10 +124,14 @@
           ]
         },
         "zh_tw": {
-          "title": "",
-          "description": "",
+          "title": "AllLink - 校園匿名社交小程序",
+          "description": "\"AllLink\"皆有為校園信息通用平台，解決三地五校區交流成本過\n高、資訊碎片化的痛點，主打校園匿名社交板塊，並以二手、代取代收、組局等剛需功能進行引流。",
           "eyebrow": "",
-          "tags": []
+          "tags": [
+            "C端社交產品",
+            "創新創業",
+            "增長與策略"
+          ]
         },
         "zh_cn": {
           "title": "",
