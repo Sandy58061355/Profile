@@ -144,7 +144,7 @@
         "id": "smart-dove",
         "image": "/assets/uploads/Logo.png",
         "link": "./case-study.html?id=smart-dove",
-        "image_fit": "contain",
+        "image_fit": "cover",
         "image_position": "center",
         "media_corners": "rounded",
         "en": {
